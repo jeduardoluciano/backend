@@ -6,8 +6,8 @@ import java.util.Collection;
 
 import javax.inject.Inject;
 
-import br.com.appdosamba.backend.model.CommercialPlace;
 import br.com.appdosamba.backend.model.User;
+import br.com.appdosamba.backend.model.common.Profile;
 import br.com.appdosamba.backend.repository.UserRepository;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Delete;
@@ -39,6 +39,7 @@ public class UsersController {
 	public void list() {
 		Collection<User> users = userBusiness.all();
 		result.include("userList", users);
+		result.include("profiles", Profile.values());
 	}
 	
 	@Post("/")
@@ -54,6 +55,6 @@ public class UsersController {
 	@Put("/{user.id}")
 	public void callUpdate(User user) {
 		User update = userBusiness.find(user.getId());
-		result.use(json()).from(update, "user").exclude("password").serialize();
+		result.use(json()).from(update, "user").include("profile").exclude("password").serialize();
 	}
 }

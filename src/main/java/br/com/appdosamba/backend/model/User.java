@@ -7,10 +7,12 @@ import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.DateTime;
 
 import br.com.appdosamba.backend.model.common.AbstractEntity;
+import br.com.appdosamba.backend.model.common.Gender;
 import br.com.appdosamba.backend.model.common.Profile;
 
 @Entity
@@ -21,11 +23,12 @@ public class User extends  AbstractEntity{
 	private String firstName;
 	private String lastName;
 	private Boolean approved;
-	
+	private Gender gender;
 	
 	@NotNull
 	@NotEmpty
 	@Column(unique = true)
+	@Email
 	private String login;
 
 	@Column(length = 150, updatable=false )
@@ -91,4 +94,11 @@ public class User extends  AbstractEntity{
 	public void setApproved(Boolean approved) {
 		this.approved = approved;
 	}
+	public Gender getGender() {
+		return gender;
+	}
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+	
 }

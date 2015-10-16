@@ -24,6 +24,7 @@ import br.com.appdosamba.backend.amazon.sqs.Queue;
 import br.com.appdosamba.backend.amazon.sqs.QueueFactory;
 import br.com.appdosamba.backend.exception.CommonException;
 import br.com.appdosamba.backend.model.CommercialPlace;
+import br.com.appdosamba.backend.utils.SendMail;
 
 @ApplicationScoped
 public class SQSJob implements Job {
@@ -35,6 +36,10 @@ public class SQSJob implements Job {
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 		try {
+			
+			 
+			
+			
 			logger.debug("Executando JOB SQS");
 			
 			emf = Persistence.createEntityManagerFactory("default");
@@ -54,7 +59,17 @@ public class SQSJob implements Job {
 					CommercialPlace place = mapper.readValue(message.getBody(), CommercialPlace.class);
 					em.persist(place);
 					logger.debug("Entity persistida " + place.toString());
-					queue.deleteMessage(message);					
+					queue.deleteMessage(message);			
+					
+					
+					
+					SendMail mail = new SendMail();
+					
+					mail.sendEmail(place.toString(), "jeolcavaco@hotmail.com");
+					
+					
+					
+					
 
 				} catch (JsonParseException e) {
 					throw new CommonException("Ocorreu erro no parse do JSON", e);

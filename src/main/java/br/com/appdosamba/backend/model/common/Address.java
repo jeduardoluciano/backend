@@ -57,6 +57,11 @@ public class Address extends  AbstractEntity{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	@Override
+	public String toString() {
+		return "Address [name=" + name + ", number=" + number + ", district=" + district + ", city=" + city + ", lat="
+				+ lat + ", lng=" + lng + ", phone=" + phone + "]";
+	}
 	
 	
 	

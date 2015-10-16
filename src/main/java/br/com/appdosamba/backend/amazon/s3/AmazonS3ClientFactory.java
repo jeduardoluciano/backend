@@ -12,7 +12,6 @@ public class AmazonS3ClientFactory {
 
 	private AmazonS3Client amazonS3Client;
 
-
 	@Produces
 	public AmazonS3Client getInstance() {
 		return amazonS3Client;

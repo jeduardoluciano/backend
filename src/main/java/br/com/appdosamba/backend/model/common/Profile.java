@@ -4,7 +4,7 @@ public enum Profile {
 
 	MEMBER("Atendente"),
 	ADMINISTRATOR("Administrator"),
-	SUPERADMINISTRATOR("SuperAdministrador");
+	SUPERADMINISTRATOR("Super Administrador");
 	
 	private String label;
 

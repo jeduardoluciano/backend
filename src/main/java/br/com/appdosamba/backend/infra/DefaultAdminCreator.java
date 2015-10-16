@@ -29,16 +29,17 @@ public class DefaultAdminCreator {
 		Long result = (Long) manager.createQuery("select count(*) from User").getSingleResult();
 		
 		if (result == 0) {
-			String login = "admin";
+			String login = "admin@appadosamba.com.br";
 			String password = "123456";
 			
 			User defaultUser = new User();
 			defaultUser.setLogin(login);
 			defaultUser.setPassword(MD5.crypt(password));
 			defaultUser.setFirstName("Super");
-			defaultUser.setFirstName("Admininstrator");
+			defaultUser.setLastName("Admininstrator");
 			defaultUser.setProfile(Profile.SUPERADMINISTRATOR);
 			defaultUser.setPhoto("images/Jellyfish.jpg");
+			defaultUser.setApproved(true);
 			
 			manager.persist(defaultUser);
 			
