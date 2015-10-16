@@ -17,6 +17,13 @@
     <link href="${pageContext.request.contextPath}/static/js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/bootstrap-reset.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+    
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-switch.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/js/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/js/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+    
+    
+    
     <link href="${pageContext.request.contextPath}/static/js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/clndr.css" rel="stylesheet">
     

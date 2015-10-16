@@ -3,11 +3,18 @@
 <script src="${pageContext.request.contextPath}/static/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bs3/js/bootstrap.min.js"></script>
+
+<script src="${pageContext.request.contextPath}/static/js/jquery-ui-1.9.2.custom.min.js"></script>
+
 <script src="${pageContext.request.contextPath}/static/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.scrollTo.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.nicescroll.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.mask.min.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+
+
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/static/js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="${pageContext.request.contextPath}/static/js/skycons/skycons.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.scrollTo/jquery.scrollTo.js"></script>
@@ -38,26 +45,19 @@
 
 
 
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.iframe-transport.js"></script>
-<!-- The basic File Upload plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload.js"></script>
-<!-- The File Upload processing plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload-process.js"></script>
-<!-- The File Upload image preview & resize plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload-image.js"></script>
-<!-- The File Upload audio preview plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload-audio.js"></script>
-<!-- The File Upload video preview plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload-video.js"></script>
-<!-- The File Upload validation plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload-validate.js"></script>
-<!-- The File Upload user interface plugin -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/jquery.fileupload-ui.js"></script>
-<!-- The main application script -->
-<script src="${pageContext.request.contextPath}/static/js/file-uploader/js/main.js"></script>
+
 
 
 
 <script type="text/javascript" language="javascript" src="${pageContext.request.contextPath}/static/js/advanced-datatable/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/data-tables/DT_bootstrap.js"></script>
 <!--common script init for all pages-->
+
+
+
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+
+

@@ -30,7 +30,9 @@
         	   $("#place\\.address\\.district").val(data.place.address.district);
         	   $("#place\\.address\\.city").val(data.place.address.city);
         	   $("#place\\.address\\.lat").val(data.place.address.lat);
-        	   $("#place\\.address\\.lng").val(data.place.address.lng);        	           	           	 
+        	   $("#place\\.address\\.lng").val(data.place.address.lng);  
+        	   if(data.place.logo != null)
+        		   $(".fileupload-new img").attr('src', data.place.logo)
            },
            error: function(){
                  alert('error handing here');

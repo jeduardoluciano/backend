@@ -199,12 +199,35 @@
 
 
 
-							<div class="form-group">
+							<!-- div class="form-group">
 								<label for="place.logo" class="col-lg-2 col-sm-2 control-label">Logo</label>
 								<div class="col-lg-10">
 									<input type="file" id="photo" name="photo">
 								</div>
-							</div>
+							</div-->
+							
+							
+							 <div class="form-group last">
+                                <label class="col-lg-2 col-sm-2 control-label" >Logo</label>
+                                <div class="col-md-10">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+				
+										<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />                                            
+
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                        <div>
+                                                   <span class="btn btn-white btn-file">
+                                                   <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Selecione a imagem</span>
+                                                   <span class="fileupload-exists"><i class="fa fa-undo"></i> Alterar</span>
+                                                   <input type="file" class="default" id="photo" name="photo"/>
+                                                   </span>                                          
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
 
 
 							<div class="form-group">

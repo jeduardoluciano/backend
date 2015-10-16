@@ -35,6 +35,7 @@
 									<tr>
 										<th>ID</th>
 										<th><fmt:message key="field.label.name" /></th>
+										<th><fmt:message key="field.label.login" /></th>
 										<th><fmt:message key="field.label.profile" /></th>
 										<th><fmt:message key="field.label.approved" /></th>
 										<th><fmt:message key="field.label.actions" /></th>
@@ -46,6 +47,7 @@
 										<tr>
 											<td><a href="#myModal" data-toggle="modal" data-update="${u.id}" class="update">${u.id }</a></td>
 											<td><a href="#myModal" data-toggle="modal" data-update="${u.id}" class="update">${u.firstName } ${u.lastName } </a></td>
+											<td><a href="#myModal" data-toggle="modal" data-update="${u.id}" class="update">${u.login }</a></td>
 											<td><a href="#myModal" data-toggle="modal" data-update="${u.id}" class="update">${u.profile.label }</a></td>
 											<td><a href="#myModal" data-toggle="modal" data-update="${u.id}" class="update">${u.approved }</a></td>
 											<td>
@@ -91,121 +93,84 @@
 								<label for="user.firstName" class="col-lg-2 col-sm-2 control-label"> Nome</label>
 								<div class="col-lg-5">
 									<input type="text" class="form-control" id="user.firstName"
-										name="user.firstName" userholder="Primeiro Nome" required>
+										name="user.firstName" placeholder="Primeiro Nome" required>
 								</div>
 							
 								<div class="col-lg-5">
 									<input type="text" class="form-control" id="user.lastName"
-										name="user.lastName" userholder="Último Nome" required>
+										name="user.lastName" placeholder="Último Nome" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="user.address.phone"
-									class="col-lg-2 col-sm-2 control-label">Telefone</label>
+									class="col-lg-2 col-sm-2 control-label">Login</label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control telefone"
-										id="user.address.phone" name="user.address.phone"
-										userholder="Telefone" required>
+									<input type="email" class="form-control"
+										id="user.login" name="user.login"
+										placeholder="Login" required>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="user.address.name"
-									class="col-lg-2 col-sm-2 control-label">Endereço</label>
-								<div class="col-lg-7">
-									<input type="text" class="form-control nameAddress"
-										id="user.address.name" name="user.address.name"
-										userholder="Rua, Avenida, Travessa" required>
-								</div>
-
-								<label for="user.address.number"
-									class="col-lg-1 col-sm-1 control-label">Num</label>
-								<div class="col-lg-2">
-									<input type="text" class="form-control numberAddress"
-										id="user.address.number" name="user.address.number"
-										userholder="">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="user.address.district"
-									class="col-lg-2 col-sm-2 control-label">Bairro</label>
+								<label for="user.profile"
+									class="col-lg-2 col-sm-2 control-label"><fmt:message
+										key="field.label.profile" /></label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control districtAddress"
-										id="user.address.district" name="user.address.district"
-										userholder="Bairro" required>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="user.address.city"
-									class="col-lg-2 col-sm-2 control-label">Cidade</label>
-								<div class="col-lg-10">
-									<select class="form-control input-sm m-bot16 cityAddress"
-										id="user.address.city" name="user.address.city" required>
-										<option>Niterói</option>
-										<option>Rio de Janeiro</option>
-										<option>São Gonçalo</option>
+									<select name="user.profile" id="user.profile" class="form-control input-sm m-bot16" required>
+										<option value=""><fmt:message
+												key="system.label.selected" />
+											<fmt:message key="field.label.profile" /></option>
+										<c:forEach items="${profiles}" var="profile">											
+												<option value="${profile}">${profile.label}</option>
+											
+										</c:forEach>
 									</select>
 								</div>
 							</div>
 
 
-							<div class="form-group">
-								<label for="user.address.lat"
-									class="col-lg-2 col-sm-2 control-label">Latitude</label>
-								<div class="col-lg-4">
-									<input type="text" class="form-control lat"
-										id="user.address.lat" name="user.address.lat">
-								</div>
-
-								<label for="user.address.lng"
-									class="col-lg-2 col-sm-2 control-label">Longitude</label>
-								<div class="col-lg-4">
-									<input type="text" class="form-control lng"
-										id="user.address.lng" name="user.address.lng" >
-								</div>
-							</div>
-							<a href="#" id="ShowLocationGoogleMaps">Setar Latitude</a>
 
 
-							<div class="form-group">
-								<label for="user.website"
-									class="col-lg-2 col-sm-2 control-label">WebSite</label>
-								<div class="col-lg-10">
-									<input type="url" class="form-control" id="user.website"
-										name="user.website" userholder="WebSite">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="user.fanpage"
-									class="col-lg-2 col-sm-2 control-label">Fã-Page</label>
-								<div class="col-lg-10">
-									<input type="url" class="form-control" id="user.fanpage"
-										name="user.fanpage" userholder="Fã-Page">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="user.fanpage"
-									class="col-lg-2 col-sm-2 control-label">Descrição</label>
-								<div class="col-lg-10">
-									<textarea class="form-control" id="user.description"
-										name="user.description" rows="6"></textarea>
-								</div>
-							</div>
-
-
-
-
-							<div class="form-group">
-								<label for="user.logo" class="col-lg-2 col-sm-2 control-label">Logo</label>
+							<!-- div class="form-group">
+								<label for="user.logo" class="col-lg-2 col-sm-2 control-label">Foto</label>
 								<div class="col-lg-10">
 									<input type="file" id="photo" name="photo">
 								</div>
-							</div>
-
-
+							</div-->
+							
+							
+							
+							<div class="form-group last">
+                                <label class="col-lg-2 col-sm-2 control-label" >Foto</label>
+                                <div class="col-md-10">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                            
+                                            <img 
+                                            <c:choose>
+                                            	<c:when  test="${user.photo != null }">
+                                            	src="${user.photo}" 
+                                            	</c:when>
+                                            	<c:otherwise>
+                                            	src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" 
+                                            	</c:otherwise>
+                                            </c:choose>
+                                            	alt="" />
+                                        </div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                        <div>
+                                                   <span class="btn btn-white btn-file">
+                                                   <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Selecione a imagem</span>
+                                                   <span class="fileupload-exists"><i class="fa fa-undo"></i> Alterar</span>
+                                                   <input type="file" class="default" id="photo" name="photo"/>
+                                                   </span>                                          
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+							
+																			
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<button type="submit" class="btn btn-default">Salvar</button>
