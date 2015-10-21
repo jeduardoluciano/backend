@@ -101,8 +101,44 @@
 										name="user.lastName" placeholder="Último Nome" required>
 								</div>
 							</div>
+							
+							
 							<div class="form-group">
-								<label for="user.address.phone"
+									<label for="user.profile"
+										class="col-lg-2 col-sm-2 control-label"><fmt:message
+											key="field.label.profile" /></label>
+									<div class="col-lg-4">
+										<select name="user.profile" id="user.profile" class="form-control input-sm m-bot16" required>
+											<option value=""><fmt:message
+													key="system.label.selected" />
+												<fmt:message key="field.label.profile" /></option>
+											<c:forEach items="${profiles}" var="profile">											
+													<option value="${profile}">${profile.label}</option>												
+											</c:forEach>
+										</select>
+									</div>
+									
+									
+									<label for="user.profile"
+										class="col-lg-2 col-sm-2 control-label"><fmt:message
+											key="field.label.gender" /></label>
+									<div class="col-lg-4">
+										<select name="user.gender" id="user.gender" class="form-control input-sm m-bot16" required>
+											<option value=""><fmt:message
+													key="system.label.selected" />
+												<fmt:message key="field.label.gender" /></option>
+											<c:forEach items="${genders}" var="gender">											
+													<option value="${gender}">${gender.label}</option>												
+											</c:forEach>
+										</select>
+									</div>
+									
+									
+								</div>
+							
+							
+							<div class="form-group">
+								<label for="user.login"
 									class="col-lg-2 col-sm-2 control-label">Login</label>
 								<div class="col-lg-10">
 									<input type="email" class="form-control"
@@ -110,34 +146,24 @@
 										placeholder="Login" required>
 								</div>
 							</div>
-
-							<div class="form-group">
-								<label for="user.profile"
-									class="col-lg-2 col-sm-2 control-label"><fmt:message
-										key="field.label.profile" /></label>
+							
+							
+							<div class="form-group password">
+								<label for="user.password"
+									class="col-lg-2 col-sm-2 control-label">Senha</label>
 								<div class="col-lg-10">
-									<select name="user.profile" id="user.profile" class="form-control input-sm m-bot16" required>
-										<option value=""><fmt:message
-												key="system.label.selected" />
-											<fmt:message key="field.label.profile" /></option>
-										<c:forEach items="${profiles}" var="profile">											
-												<option value="${profile}">${profile.label}</option>
-											
-										</c:forEach>
-									</select>
+									<input type="password" class="form-control"
+										id="user.password" name="user.password"
+										placeholder="Senha" required>
 								</div>
 							</div>
-
-
-
-
-							<!-- div class="form-group">
-								<label for="user.logo" class="col-lg-2 col-sm-2 control-label">Foto</label>
-								<div class="col-lg-10">
-									<input type="file" id="photo" name="photo">
-								</div>
-							</div-->
 							
+							
+								
+							
+
+
+
 							
 							
 							<div class="form-group last">

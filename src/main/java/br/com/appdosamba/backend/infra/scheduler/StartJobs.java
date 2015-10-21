@@ -21,7 +21,7 @@ public class StartJobs {
 			JobDetail job = JobBuilder.newJob(SQSJob.class).withIdentity("dummyJobName", "group1").build();
 
 			Trigger trigger = TriggerBuilder.newTrigger().withIdentity("dummyTriggerName", "group1")
-					.withSchedule(CronScheduleBuilder.cronSchedule("0 0/2 * * * ?")).build();
+					.withSchedule(CronScheduleBuilder.cronSchedule("0 0/30 * * * ?")).build();
 
 			Scheduler scheduler = new StdSchedulerFactory().getScheduler();
 

@@ -18,7 +18,16 @@
         		   if($(this).val() == data.user.profile){
         			   $(this).prop("selected", true);
         		   }        			  
+        	   });
+        	   
+        	   $(".password").hide();
+        	   
+        	   $("#user\\.gender option").each(function(){
+        		   if($(this).val() == data.user.gender){
+        			   $(this).prop("selected", true);
+        		   }        			  
         	   });  
+        	   
         	   if(data.user.photo)
         		   $(".fileupload-new img").attr('src', data.user.photo)
            },

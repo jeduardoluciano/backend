@@ -11,6 +11,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.DateTime;
 
+import br.com.appdosamba.backend.infra.MD5;
 import br.com.appdosamba.backend.model.common.AbstractEntity;
 import br.com.appdosamba.backend.model.common.Gender;
 import br.com.appdosamba.backend.model.common.Profile;
@@ -41,7 +42,7 @@ public class User extends  AbstractEntity{
 	
 	@Column(length = 255)
 	@NotNull
-	private String photo = "images/user.png";
+	private String photo = "https://s3.amazonaws.com/app-samba/img/users/defaut.png";
 	
 	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime lastLogin;
@@ -86,7 +87,7 @@ public class User extends  AbstractEntity{
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.password = MD5.crypt(password);
 	}
 	public Boolean getApproved() {
 		return approved;

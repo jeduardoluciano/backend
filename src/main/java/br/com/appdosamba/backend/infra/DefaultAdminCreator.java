@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import org.apache.log4j.Logger;
 
 import br.com.appdosamba.backend.model.User;
+import br.com.appdosamba.backend.model.common.Gender;
 import br.com.appdosamba.backend.model.common.Profile;
 
 @ApplicationScoped
@@ -37,9 +38,9 @@ public class DefaultAdminCreator {
 			defaultUser.setPassword(MD5.crypt(password));
 			defaultUser.setFirstName("Super");
 			defaultUser.setLastName("Admininstrator");
-			defaultUser.setProfile(Profile.SUPERADMINISTRATOR);
-			defaultUser.setPhoto("images/Jellyfish.jpg");
+			defaultUser.setProfile(Profile.SUPERADMINISTRATOR);		
 			defaultUser.setApproved(true);
+			defaultUser.setGender(Gender.MALE);
 			
 			manager.persist(defaultUser);
 			
